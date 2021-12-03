@@ -15,6 +15,7 @@
 
 .navbar {
   display: block;
+  background-color: #3b6348;
   background: repeating-linear-gradient(
     -45deg,
     #3b6348,
@@ -25,6 +26,14 @@
 
   .navbar-brand {
     font-weight: 900;
+  }
+
+  .navbar-nav .nav-link:hover {
+    font-weight: 900;
+  }
+
+  .navbar-brand, .navbar-nav {
+    font-family: 'Syne Mono', monospace;
   }
 }
 
