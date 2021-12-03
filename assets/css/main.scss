@@ -8,6 +8,14 @@
 @import "includes/utils/opacity.scss";
 @import "includes/utils/min-height.scss";
 
+:root {
+  color-scheme: dark;
+}
+
+body {
+  color: white;
+}
+
 html,
 body,
 .container {

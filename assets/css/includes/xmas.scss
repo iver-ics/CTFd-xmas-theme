@@ -11,3 +11,29 @@
     mix-blend-mode: screen;
   }
 }
+
+
+.navbar {
+  display: block;
+  background: repeating-linear-gradient(
+    -45deg,
+    #3b6348,
+    #3b6348 10px,
+    #457354 10px,
+    #457354 20px
+  );
+
+  .navbar-brand {
+    font-weight: 900;
+  }
+
+  .lights {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 15px;
+
+    background: url('/themes/xmas/static/img/xmas/lights2-transparent.gif');
+  }
+}
