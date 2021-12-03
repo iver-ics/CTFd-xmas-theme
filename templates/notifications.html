@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="jumbotron">
-		<div class="container">
-			<h1>Notifications</h1>
-		</div>
-	</div>
+{% from 'macros/jumbotron.html' import jumbotron %}
+  {{ jumbotron(header='Notifications') }}
 	<div class="container">
 		{% if not notifications %}
 		<h2 class="text-center">There are no notifications yet</h2>

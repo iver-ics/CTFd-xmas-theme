@@ -26,14 +26,40 @@
   .navbar-brand {
     font-weight: 900;
   }
+}
 
-  .lights {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 15px;
+.xmas-lights {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 15px;
 
-    background: url('/themes/xmas/static/img/xmas/lights2-transparent.gif');
-  }
+  background: url('/themes/xmas/static/img/xmas/lights2-transparent.gif');
+  background-size: contain;
+}
+
+.xmas-icicles {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 35px;
+
+  background: url('/themes/xmas/static/img/xmas/icicles.png');
+  background-position: center top;
+  background-size: contain;
+}
+
+.jumbotron {
+  position: relative;
+  background-color: #e90504;
+  background: url('/themes/xmas/static/img/xmas/christmas-banner.png');
+}
+
+.footer {
+  background: url('/themes/xmas/static/img/xmas/snow_bottom_border.png');
+  background-position: left bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

@@ -1,0 +1,12 @@
+{% macro jumbotron(header='') %}
+<div class="jumbotron">
+	<div class="container">
+		{%- if caller %}
+		{{ caller() }}
+		{%- else %}
+		<h1>{{ header }}</h1>
+		{%- endif %}
+	</div>
+	<div class="xmas-lights"></div>
+</div>
+{%- endmacro %}

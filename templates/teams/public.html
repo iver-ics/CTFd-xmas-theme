@@ -4,60 +4,59 @@
 {% endblock %}
 
 {% block content %}
-	<div class="jumbotron">
-		<div class="container">
-			<h1 id="team-id" team-id="{{ team.id }}">{{ team.name }}</h1>
-			{% if team.oauth_id %}
-				<a href="https://majorleaguecyber.org/t/{{ team.name }}">
-					<h3><span class="badge badge-primary">Official</span></h3>
+{% from 'macros/jumbotron.html' import jumbotron %}
+	{% call jumbotron() %}
+		<h1 id="team-id" team-id="{{ team.id }}">{{ team.name }}</h1>
+		{% if team.oauth_id %}
+			<a href="https://majorleaguecyber.org/t/{{ team.name }}">
+				<h3><span class="badge badge-primary">Official</span></h3>
+			</a>
+		{% endif %}
+		{% if team.affiliation %}
+			<h3 class="d-inline-block">
+				<span class="badge badge-primary">{{ team.affiliation }}</span>
+			</h3>
+		{% endif %}
+		{% if team.country %}
+			<h3 class="d-inline-block">
+				<span class="badge badge-primary">
+					<i class="flag-{{ team.country.lower() }}"></i>
+					{{ lookup_country_code(team.country) }}
+				</span>
+			</h3>
+		{% endif %}
+		{% for field in team.fields %}
+			<h3 class="d-block">
+				{{ field.name }}: {{ field.value }}
+			</h3>
+		{% endfor %}
+		<h2 id="team-place" class="text-center">
+			{# This intentionally hides the team's place when scores are hidden because this can be their internal profile
+		and we don't want to leak their place in the CTF. #}
+			{# Public page hiding is done at the route level #}
+			{% if scores_visible() %}
+				{% if place %}
+					{{ place }}
+					<small>place</small>
+				{% endif %}
+			{% endif %}
+		</h2>
+		<h2 id="team-score" class="text-center">
+			{% if score %}
+				{{ score }}
+				<small>points</small>
+			{% endif %}
+		</h2>
+
+		<div class="pt-3">
+			{% if team.website and (team.website.startswith('http://') or team.website.startswith('https://')) %}
+				<a href="{{ team.website }}" target="_blank" style="color: inherit;" rel="noopener">
+					<i class="fas fa-external-link-alt fa-2x px-2" data-toggle="tooltip" data-placement="top"
+						 title="{{ team.website }}"></i>
 				</a>
 			{% endif %}
-			{% if team.affiliation %}
-				<h3 class="d-inline-block">
-					<span class="badge badge-primary">{{ team.affiliation }}</span>
-				</h3>
-			{% endif %}
-			{% if team.country %}
-				<h3 class="d-inline-block">
-					<span class="badge badge-primary">
-						<i class="flag-{{ team.country.lower() }}"></i>
-						{{ lookup_country_code(team.country) }}
-					</span>
-				</h3>
-			{% endif %}
-			{% for field in team.fields %}
-				<h3 class="d-block">
-					{{ field.name }}: {{ field.value }}
-				</h3>
-			{% endfor %}
-			<h2 id="team-place" class="text-center">
-				{# This intentionally hides the team's place when scores are hidden because this can be their internal profile
-			and we don't want to leak their place in the CTF. #}
-				{# Public page hiding is done at the route level #}
-				{% if scores_visible() %}
-					{% if place %}
-						{{ place }}
-						<small>place</small>
-					{% endif %}
-				{% endif %}
-			</h2>
-			<h2 id="team-score" class="text-center">
-				{% if score %}
-					{{ score }}
-					<small>points</small>
-				{% endif %}
-			</h2>
-
-			<div class="pt-3">
-				{% if team.website and (team.website.startswith('http://') or team.website.startswith('https://')) %}
-					<a href="{{ team.website }}" target="_blank" style="color: inherit;" rel="noopener">
-						<i class="fas fa-external-link-alt fa-2x px-2" data-toggle="tooltip" data-placement="top"
-						   title="{{ team.website }}"></i>
-					</a>
-				{% endif %}
-			</div>
 		</div>
-	</div>
+	{% endcall %}
 	<div class="container">
 		{% include "components/errors.html" %}
 

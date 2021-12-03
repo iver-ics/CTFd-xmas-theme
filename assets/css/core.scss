@@ -1,6 +1,10 @@
 .jumbotron {
-  background-color: #343a40;
+  position: relative;
+  //background-color: #343a40;
   color: #fff;
+
+  background-color: #e90504;
+  background-image: url('/themes/xmas/static/img/xmas/christmas-banner.png');
 }
 
 .form-control {

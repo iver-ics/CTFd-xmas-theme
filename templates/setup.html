@@ -18,11 +18,8 @@
 {% endblock %}
 
 {% block content %}
-	<div class="jumbotron">
-		<div class="container">
-			<h1>Setup</h1>
-		</div>
-	</div>
+{% from 'macros/jumbotron.html' import jumbotron %}
+	{{ jumbotron(header='Setup') }}
 	<div class="container">
 		<div class="col-md-8 offset-md-2">
 			{% include "components/errors.html" %}
