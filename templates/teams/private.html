@@ -274,7 +274,7 @@
 		</div>
 
 		{% if solves or awards %}
-			<div class="row">
+			<div class="row mt-4">
 				<div class="col-md-6 d-none d-md-block d-lg-block">
 					<div id="keys-pie-graph" class="d-flex align-items-center">
 						<div class="text-center w-100">
@@ -290,7 +290,7 @@
 					</div>
 				</div>
 				<br class="clearfix">
-				<div class="col-md-12 d-none d-md-block d-lg-block">
+				<div class="col-md-12 d-none d-md-block d-lg-block mt-4">
 					<div id="score-graph" class="w-100 d-flex align-items-center">
 						<div class="text-center w-100">
 							<i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
@@ -302,12 +302,12 @@
 			<div class="clearfix"></div>
 
 			{% if awards %}
-				<div class="row">
-					<div class="col-md-12 xmas-card">
+				<div class="row mt-4">
+					<div class="col-md-12 text-white">
 						<h3>Awards</h3>
 					</div>
 					{% for award in awards %}
-						<div class="col-md-3 col-sm-6">
+						<div class="col-md-3 col-sm-6 xmas-card">
 							<p class="text-center">
 								<i class="award-icon award-{{ award.icon }} fa-2x"></i>
 								<br>
@@ -323,7 +323,7 @@
 				<br>
 			{% endif %}
 
-			<div class="row">
+			<div class="row mt-4">
 				<div class="col-md-12 xmas-card">
 					<h3>Solves</h3>
 					<table class="table table-striped">
