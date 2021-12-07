@@ -83,7 +83,11 @@ main>div.container:first-child>div.row:first-child>div.col-md-6.offset-md-3:firs
 // landing page which can't be modified via themes.
 .xmas-card,
 main>div.container:first-child>div.row:first-child>div.col-md-6.offset-md-3:first-child {
-  background: white;
+  background-color: white;
+  background: url('/themes/xmas/static/img/xmas/card-bg-white.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 15px;
 
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -101,8 +105,13 @@ main>div.container:first-child>div.row:first-child>div.col-md-6.offset-md-3:firs
     transform: rotate(-1.5deg);
     transform-origin: center center;
 
-    background-color: #e90504;
     z-index: -1;
+
+    background-color: #e90504;
+    background: url('/themes/xmas/static/img/xmas/card-bg-red.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   img.w-100.mx-auto.d-block {
