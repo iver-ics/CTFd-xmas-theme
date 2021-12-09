@@ -37,6 +37,26 @@
   }
 }
 
+.category-header {
+  font-family: 'Syne Mono', monospace;
+  font-weight: 900;
+
+  &::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    width: 100%;
+    left: -2rem;
+    right: 0;
+    top: 100%;
+
+    height: 2px;
+    background-color: #160030;
+    background: linear-gradient(65deg,#fff0 0%, #ffff 10%,#fff0 100%);
+  }
+}
+
 .xmas-lights {
   position: absolute;
   top: 100%;
