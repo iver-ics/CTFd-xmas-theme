@@ -2,9 +2,11 @@ import "./main";
 import $ from "jquery";
 import CTFd from "../CTFd";
 import echarts from "echarts/dist/echarts-en.common";
+import "echarts/theme/green.js";
 import dayjs from "dayjs";
 import { htmlEntities, cumulativeSum, colorHash } from "../utils";
 
+const echartsTheme = "green";
 const graph = $("#score-graph");
 const table = $("#scoreboard tbody");
 
@@ -142,13 +144,14 @@ const createGraph = () => {
     if (option === false) {
       // Replace spinner
       graph.html(
-        '<h3 class="opacity-50 text-center w-100 justify-content-center align-self-center">No solves yet</h3>'
+        '<h3 class="opacity-50 text-center w-100 justify-content-center align-self-center text-white">No solves yet</h3>'
       );
       return;
     }
 
     graph.empty(); // Remove spinners
-    let chart = echarts.init(document.querySelector("#score-graph"));
+    graph.addClass('xmas-card');
+    let chart = echarts.init(document.querySelector("#score-graph"), echartsTheme);
     chart.setOption(option);
 
     $(window).on("resize", function() {
@@ -161,7 +164,7 @@ const createGraph = () => {
 
 const updateGraph = () => {
   buildGraphData().then(option => {
-    let chart = echarts.init(document.querySelector("#score-graph"));
+    let chart = echarts.init(document.querySelector("#score-graph"), echartsTheme);
     chart.setOption(option);
   });
 };

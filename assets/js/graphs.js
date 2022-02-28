@@ -1,7 +1,10 @@
 import $ from "jquery";
+import "echarts/theme/green.js";
 import echarts from "echarts/dist/echarts-en.common";
 import dayjs from "dayjs";
 import { cumulativeSum, colorHash } from "./utils";
+
+const echartsTheme = "green";
 
 const graph_configs = {
   score_graph: {
@@ -310,7 +313,8 @@ export function createGraph(
   account_id
 ) {
   const cfg = graph_configs[graph_type];
-  let chart = echarts.init(document.querySelector(target));
+  $(target).addClass('xmas-card');
+  let chart = echarts.init(document.querySelector(target), echartsTheme);
   chart.setOption(cfg.format(type, id, name, account_id, data));
   $(window).on("resize", function() {
     if (chart != null && chart != undefined) {
@@ -329,7 +333,7 @@ export function updateGraph(
   account_id
 ) {
   const cfg = graph_configs[graph_type];
-  let chart = echarts.init(document.querySelector(target));
+  let chart = echarts.init(document.querySelector(target), echartsTheme);
   chart.setOption(cfg.format(type, id, name, account_id, data));
 }
 

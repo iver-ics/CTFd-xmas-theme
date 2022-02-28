@@ -4,11 +4,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-	<div class="container">
-		<h1>Teams</h1>
-	</div>
-</div>
+{% from 'macros/jumbotron.html' import jumbotron %}
+{{ jumbotron(header='Teams') }}
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -42,7 +39,7 @@
 	<hr>
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 xmas-card">
 			<table class="table table-striped">
 				<thead>
 					<tr>

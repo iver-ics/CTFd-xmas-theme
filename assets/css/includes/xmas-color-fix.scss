@@ -1,0 +1,31 @@
+
+
+:root {
+  color-scheme: dark;
+}
+
+//body, .table {
+//  color: white;
+//}
+
+#challenges-board {
+  .category-header {
+    color: white;
+  }
+
+  .xmas-card.challenge-button {
+    color: #343a40;
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+
+    &:hover {
+      background-color: #e6e6fa;
+      color: #e90504;
+    }
+
+    &.solved-challenge {
+      background: none !important;
+      color: white;
+    }
+  }
+}
